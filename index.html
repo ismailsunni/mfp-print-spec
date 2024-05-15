@@ -25,10 +25,15 @@
             Set to Swiss Topo MFP
           </button>
         </div>
-        <div class="form-group">
-          <label for="spec">Spec</label>
-          <textarea class="form-control" id="spec" rows="10"></textarea>
-        </div>
+        <form>
+          <div class="form-group">
+            <label for="spec"
+              >Print Spec (write or drag a JSON file here)</label
+            >
+            <textarea class="form-control" id="spec" rows="10"></textarea>
+          </div>
+          <!-- Rest of your form... -->
+        </form>
         <div class="form-group">
           <button type="button" class="btn btn-primary" id="print">
             Print Spec!
@@ -61,6 +66,22 @@
           document.getElementById("mfpURL").value =
             "https://sys-map.dev.bgdi.ch/api/print3/print/mapviewer";
         });
+
+      const textarea = document.getElementById("spec");
+
+      textarea.addEventListener("dragover", (event) => {
+        event.preventDefault();
+      });
+
+      textarea.addEventListener("drop", (event) => {
+        event.preventDefault();
+        const file = event.dataTransfer.files[0];
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          textarea.value = event.target.result;
+        };
+        reader.readAsText(file);
+      });
     </script>
   </body>
 </html>
