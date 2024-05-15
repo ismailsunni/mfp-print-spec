@@ -18,6 +18,14 @@
           <textarea class="form-control" id="mfpURL" rows="1"></textarea>
         </div>
         <div class="form-group">
+          <button type="button" class="btn btn-primary" id="setGeomapfishDemo">
+            Set to demo MFP
+          </button>
+          <button type="button" class="btn btn-primary" id="setSwissTopoMFP">
+            Set to Swiss Topo MFP
+          </button>
+        </div>
+        <div class="form-group">
           <label for="spec">Spec</label>
           <textarea class="form-control" id="spec" rows="10"></textarea>
         </div>
@@ -40,5 +48,19 @@
       </form>
     </div>
     <script type="module" src="./index.js"></script>
+    <script>
+      document
+        .getElementById("setGeomapfishDemo")
+        .addEventListener("click", function () {
+          document.getElementById("mfpURL").value =
+            "https://geomapfish-demo-2-8.camptocamp.com/printproxy";
+        });
+      document
+        .getElementById("setSwissTopoMFP")
+        .addEventListener("click", function () {
+          document.getElementById("mfpURL").value =
+            "https://sys-map.dev.bgdi.ch/api/print3/print/mapviewer";
+        });
+    </script>
   </body>
 </html>
