@@ -1,6 +1,6 @@
-export default {
-  base: "/mfp-print-spec/",
-  build: {
-    outDir: "dist",
-  },
-};
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  base: "/YOUR_REPOSITORY_NAME/",
+  // other configurations...
+});
