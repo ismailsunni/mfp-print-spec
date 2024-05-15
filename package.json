@@ -11,5 +11,9 @@
   "devDependencies": {
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "@geoblocks/mapfishprint": "^0.2.13",
+    "ol": "^9.1.0"
   }
 }
